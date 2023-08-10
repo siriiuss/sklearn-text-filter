@@ -7,11 +7,11 @@ import joblib
 
 objectionable_texts = ["This text objectionable.", "This text contains objectionable arguments."]
 acceptable_texts = ["This text is acceptable.", "This text contains acceptable arguments."]
-metinler = objectionable_texts + acceptable_texts
-etiketler = [1] * len(objectionable_texts) + [0] * len(acceptable_texts)
+texts = objectionable_texts + acceptable_texts
+tags = [1] * len(objectionable_texts) + [0] * len(acceptable_texts)
 
 
-X_train, X_test, y_train, y_test = train_test_split(metinler, etiketler, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(texts, tags, test_size=0.2, random_state=42)
 
 
 vectorizer = TfidfVectorizer()
